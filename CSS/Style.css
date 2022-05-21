@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+}
+
+.login-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-size: 16px;
+}
+
+.font-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    background-color: #3A54AA;
+}
+/*LOGIN STYLE*/
+.font-form-login {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.font-form-login > div {
+    margin: 1.875em 0em;
+}
+.icon-container {
+    display: flex;
+    justify-content: center;
+    width: 6.25em;
+}
+
+.menssage-container {
+    text-align: center;
+    width: 18.75em;
+    height: 7.5em;
+}
+
+.formInput-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28.125em;
+}
+
+.formInput-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20em;
+}
+
+.formInput-container form div input {
+    background-color: #eee;
+    border: none;
+    border-radius: 0px;
+}
+
+.formInput-container form div span {
+    width: 3.125em;
+    border: none;
+    border-radius: 2px 0px;
+    background-color: #eee;
+}
+
+.login-input-container {
+    display: flex;
+    width: 25em;
+}
+
+.infoInputs-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.btn-container {
+    width: 100%;
+}
+
+.btn-container button {
+    width: 100%;
+    height: 3.8125em;
+    border: none;
+    border-radius: 5px;
+    background-color: #3A54AA;
+    color: white;
+}
+
+.linkRegister-container {
+    text-align: center;
+}
+
+/*END LOGIN STYLES*/
+/*REGISTER DISPLAY STYLES*/
+.font-form-register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.font-form-register > div {
+    margin: 1.875em 0em;
+}
+.formregister-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35.125em;
+}
+
+.formregister-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 29em;
+}
+
+.formregister-container form div input {
+    background-color: #eee;
+    border: none;
+    border-radius: 0px;
+}
+
+.formregister-container form div span {
+    width: 3.125em;
+    border: none;
+    border-radius: 2px 0px;
+    background-color: #eee;
+}
+
+.register-input-container {
+    display: flex;
+    width: 20em;
+}
+/*RESPOSIVE DESING*/
+@media (max-width:1024px) {
+    .login-section {
+        font-size: 19px;
+    }
+}
+@media (max-width: 768px) {
+    .login-section {
+        font-size: 10px;
+    }
+    .font-form-register {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 425px) {
+    .login-section {
+        flex-direction: column;
+        height: auto;
+        justify-content: space-around;
+    }
+
+    .font-container {
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    .font-form-login {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .font-form-register {
+        width: 100%;
+        height: 100vh;
+    }
+}
+/*END RESPONSIVE DESING*/
