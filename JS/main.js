@@ -165,7 +165,17 @@ const verify = () => {
 //Close sesion
 
 const closeSesion = () => {
-    localStorage.setItem('logueado', false);
+    localStorage.removeItem('logueado');
+}
+
+//Mostrar datos 
+
+const showData = () => {
+    let newDiv = document.createElement('div');
+    let newImg = document.createElement('img');
+    let newP = document.createElement('p')
+
+    
 }
 
 //Call function 
