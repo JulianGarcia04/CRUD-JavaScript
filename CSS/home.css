@@ -1,6 +1,5 @@
 .principalPage {
     display: none;
-    flex-direction: row;
     width: 100vw;
     height: 100vh;
 }
@@ -121,4 +120,48 @@
     justify-content: center;
     padding: 5px;
     width: 100%;
+}
+
+@media (max-width:425px) {
+    .principalPage {
+        flex-direction: column;  
+    }
+    
+    .menuContainer {
+        flex-direction: row;
+        align-items: center;
+        padding: 5px;
+        width: 100%;
+        height: 75px;
+    }
+
+    .menuContainer div {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .optionsInfo {
+        width: 65%;
+    }
+
+    .userOptionContainer {
+        justify-content: flex-end;
+        width: 35%;
+    }
+
+    .infoUsersContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .listUsersContainer {
+        width: 100%;
+    }
+
+    .usersContainer{
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
 }
