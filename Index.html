@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--lINK STYLES-->
     <link rel="stylesheet" href="/CSS/Style.css">
+    <link rel="stylesheet" href="/CSS/loading-display.css">
+    <link rel="stylesheet" href="/CSS/Responsive.css">
+    <link rel="stylesheet" href="/CSS/home.css">
+    <!--Boostrap CDN STYLE-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
     <!--Login and Register-->
-    <section class="login-section">
+    <section class="login-section displayFlex" id="login-section">
         <!--Carrusell of Login-->
         <div class="font-container">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -45,100 +50,319 @@
                 </button>
             </div>
         </div>
+        <div class="font-form-login displayFlex" id="font-form-login">
+            <!--FORM LOGIN-->
+            <div class="icon-container">
+                <i class="fa-solid fa-user-secret fa-2xl"></i>
+            </div>
+            <div class="menssage-container">
+                <h1>
+                    Hello Again!
+                </h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex velit veritatis unde?
+                </p>
+            </div>
+            <div class="formInput-container">
+                <form>
+                    <div class="login-input-container form-floating">
+                        <input type="email" placeholder="Email" id="input-email-login" class="form-control input-Login" required>
+                        <label for="input-email">Email</label>
+                        <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
+                    </div>
+                    <div class="login-input-container form-floating">
+                        <input type="password" placeholder="Password" id="input-password-login" class="form-control input-Login" required>
+                        <label for="input-password">Password</label>
+                        <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                    </div>
+                    <div class="infoInputs-container">
+                        <div>
+                            <input type="checkbox" id="check-remenber">
+                            <label for="check-remenber">Remenber Me</label>
+                        </div>
+                        <a href="">Recovery Password</a>
+                    </div>
+                    <div class="btn-container">
+                        <button type="reset" id="btn-login">Login</button>
+                    </div>
+                </form>
+                <div class="linkRegister-container">
+                    Don't have account yet?
+                    <a href="#Register" id="link-register">Sign Up </a>
+                </div>
+            </div>
+        </div>
+        <!--FORM REGISTER-->
+        <div class="font-form-register" id="font-form-register">
+            <div class="icon-container">
+                <i class="fa-solid fa-user-secret fa-2xl"></i>
+            </div>
+            <div class="menssage-container-register">
+                <h1>
+                    Register
+                </h1>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex velit veritatis unde?
+                </p>
+            </div>
+            <div class="formregister-container">
+                <form>
+                    <div class="register-input-container form-floating">
+                        <input type="number" placeholder="Document Number" id="input-documentNumber" class="form-control input-Login" required>
+                        <label for="input-documentNumber">Document Number</label>
+                        <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                    </div>
+                    <div class="register-input-container form-floating">
+                        <input type="text" placeholder="First Name" id="input-firstName" class="form-control input-Login" required>
+                        <label for="input-firstName">First Name</label>
+                        <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                    </div>
+                    <div class="register-input-container form-floating">
+                        <input type="text" placeholder="Last Name" id="input-lastName" class="form-control input-Login" required>
+                        <label for="input-lastName">Last Name</label>
+                        <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                    </div>
+                    <div class="register-input-container form-floating">
+                        <input type="email" placeholder="Email" id="input-email-register" class="form-control input-Login" required>
+                        <label for="input-email">Email</label>
+                        <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
+                    </div>
+                    <div class="register-input-container form-floating">
+                        <input type="password" placeholder="Password" id="input-password-register" class="form-control input-Login" required>
+                        <label for="input-password">Password</label>
+                        <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                    </div>
+                    <div class="register-input-container form-floating">
+                        <input type="password" placeholder="Password" id="input-confirmPassword" class="form-control input-Login" required>
+                        <label for="input-confirmPassword">Confirm Password</label>
+                        <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
+                    </div>
+                    <div class="btn-container">
+                        <button type="button" id="btn-register">Register</button>
+                    </div>
+                </form>
+                <div class="linkRegister-container">
+                    I have account yet?
+                    <a href="#Login" id="link-login">Log in</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Loading Display-->
+    <section class="loading-Display" id="loading-Display">
+        <div class="socket">
+			<div class="gel center-gel">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c1 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c2 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c3 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c4 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c5 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c6 r1">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			
+			<div class="gel c7 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			
+			<div class="gel c8 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c9 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c10 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c11 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c12 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c13 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c14 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c15 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c16 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c17 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c18 r2">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c19 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c20 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c21 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c22 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c23 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c24 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c25 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c26 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c28 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c29 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c30 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c31 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c32 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c33 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c34 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c35 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c36 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			<div class="gel c37 r3">
+				<div class="hex-brick h1"></div>
+				<div class="hex-brick h2"></div>
+				<div class="hex-brick h3"></div>
+			</div>
+			
+		</div>
+    </section>
+    <!--Pagina Principal-->
+    <section class="principalPage" id="principalPage">
+        <div class="menuContainer" id="menuContainer">
+            <div class="optionsInfo">
+                <div class="imgLogoContainer">
+                    <i class="fa-solid fa-user-secret fa-3x"></i>
+                </div>
+                <div class="buttonsContainer">
+                    <button type="button"><i class="fa-solid fa-shield fa-2x"></i></button>
+                    <button type="button"><i class="fa-regular fa-circle-user fa-2x"></i></button>
+                    <button type="button"><i class="fa-solid fa-gear fa-2x"></i></button>
+                </div>
+            </div>
+            <div class="userOptionContainer">
+                <i class="fa-solid fa-user-large fa-3x"></i>
+            </div>
+        </div>
+        <div>
+            Bienvenido!!!
+        </div>
         <div>
 
-            <div class="font-form-login">
-                <!--FORM LOGIN-->
-                <div class="icon-container">
-                    <i class="fa-solid fa-user-secret fa-2xl"></i>
-                </div>
-                <div class="menssage-container">
-                    <h1>
-                        Hello Again!
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex velit veritatis unde?
-                    </p>
-                </div>
-                <div class="formInput-container">
-                    <form>
-                        <div class="login-input-container form-floating">
-                            <input type="email" placeholder="Email" id="input-email" class="form-control input-Login">
-                            <label for="input-email">Email</label>
-                            <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
-                        </div>
-                        <div class="login-input-container form-floating">
-                            <input type="password" placeholder="Password" id="input-password" class="form-control input-Login">
-                            <label for="input-password">Password</label>
-                            <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                        </div>
-                        <div class="infoInputs-container">
-                            <div>
-                                <input type="checkbox" id="check-remenber">
-                                <label for="check-remenber">Remenber Me</label>
-                            </div>
-                            <a href="">Recovery Password</a>
-                        </div>
-                        <div class="btn-container">
-                            <button type="button">Login</button>
-                        </div>
-                    </form>
-                    <div class="linkRegister-container">
-                        Don't have account yet?
-                        <a href="">Sign Up </a>
-                    </div>
-                </div>
-            </div>
-            <!--FORM REGISTER-->
-            <div class="font-form-register">
-                <div class="icon-container">
-                    <i class="fa-solid fa-user-secret fa-2xl"></i>
-                </div>
-                <div class="menssage-container">
-                    <h1>
-                        Register
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex velit veritatis unde?
-                    </p>
-                </div>
-                <div class="formregister-container">
-                    <form>
-                        <div class="register-input-container form-floating">
-                            <input type="text" placeholder="First Name" id="input-email" class="form-control input-Login">
-                            <label for="input-email">First Name</label>
-                            <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-                        </div>
-                        <div class="register-input-container form-floating">
-                            <input type="text" placeholder="Last Name" id="input-email" class="form-control input-Login">
-                            <label for="input-email">Last Name</label>
-                            <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
-                        </div>
-                        <div class="register-input-container form-floating">
-                            <input type="email" placeholder="Email" id="input-email" class="form-control input-Login">
-                            <label for="input-email">Email</label>
-                            <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
-                        </div>
-                        <div class="register-input-container form-floating">
-                            <input type="password" placeholder="Password" id="input-password" class="form-control input-Login">
-                            <label for="input-password">Password</label>
-                            <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                        </div>
-                        <div class="register-input-container form-floating">
-                            <input type="password" placeholder="Password" id="input-password" class="form-control input-Login">
-                            <label for="input-password">Confirm Password</label>
-                            <span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                        </div>
-                        <div class="btn-container">
-                            <button type="button">Login</button>
-                        </div>
-                    </form>
-                    <div class="linkRegister-container">
-                        I have account yet?
-                        <a href="">Log in</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
     <!--Boostrap CDN-->
@@ -147,6 +371,8 @@
     </script>
     <!--FontAwesome CDN-->
     <script src="https://kit.fontawesome.com/c102efc9c2.js" crossorigin="anonymous"></script>
+    <!--SweetAlert CDN-->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--JavaScript Document-->
     <script src="/JS/main.js"></script>
 </body>

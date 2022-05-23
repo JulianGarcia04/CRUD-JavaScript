@@ -1,0 +1,55 @@
+.principalPage {
+    display: none;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.menuContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 75px;
+    height: 100vh;
+    background-color: #3A54AA;
+}
+
+.optionsInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 70%;
+}
+
+.optionsInfo div {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonsContainer {
+    width: 100%;
+    height: 70%;
+    justify-content: space-evenly;
+}
+
+.buttonsContainer button {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+
+.imgLogoContainer {
+    text-align: center;
+    width: 100%;
+    height: 70px;
+}
+
+.userOptionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+}

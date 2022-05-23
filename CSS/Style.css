@@ -3,7 +3,7 @@ body {
 }
 
 .login-section {
-    display: flex;
+    display: none;
     width: 100%;
     height: 100vh;
     font-size: 16px;
@@ -25,6 +25,7 @@ body {
     justify-content: center;
     width: 50%;
     height: 100%;
+    font-size: 16px;
 }
 
 .font-form-login > div {
@@ -100,7 +101,7 @@ body {
 /*END LOGIN STYLES*/
 /*REGISTER DISPLAY STYLES*/
 .font-form-register {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -108,21 +109,27 @@ body {
     height: 100%;
 }
 
+.menssage-container-register {
+    text-align: center;
+    width: 18.75em;
+    height: 5.5em;
+}
+
 .font-form-register > div {
-    margin: 1.875em 0em;
+    margin: 1em 0em;
 }
 .formregister-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 35.125em;
+    justify-content: space-around;
+    height: 40.125em;
 }
 
 .formregister-container form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 29em;
+    height: 32em;
 }
 
 .formregister-container form div input {
@@ -142,42 +149,13 @@ body {
     display: flex;
     width: 20em;
 }
-/*RESPOSIVE DESING*/
-@media (max-width:1024px) {
-    .login-section {
-        font-size: 19px;
-    }
-}
-@media (max-width: 768px) {
-    .login-section {
-        font-size: 10px;
-    }
-    .font-form-register {
-        font-size: 14px;
-    }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
 
-@media (max-width: 425px) {
-    .login-section {
-        flex-direction: column;
-        height: auto;
-        justify-content: space-around;
-    }
+input[type=number] { -moz-appearance:textfield; }
 
-    .font-container {
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-    }
-
-    .font-form-login {
-        width: 100%;
-        height: 100vh;
-    }
-
-    .font-form-register {
-        width: 100%;
-        height: 100vh;
-    }
-}
-/*END RESPONSIVE DESING*/
+/*END REGISTER DISPLAY STYLES*/
