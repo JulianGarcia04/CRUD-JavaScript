@@ -162,8 +162,15 @@ const verify = () => {
     };
 };
 
+//Close sesion
+
+const closeSesion = () => {
+    localStorage.setItem('logueado', false);
+}
+
 //Call function 
 document.getElementById('btn-register').addEventListener('click', createUser);
 document.addEventListener('load', dataBase());
 document.addEventListener('load', verify());
 document.getElementById('btn-login').addEventListener('click', loginFunction);
+document.getElementById('btn-close').addEventListener('click', closeSesion);
