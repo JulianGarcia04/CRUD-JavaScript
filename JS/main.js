@@ -2,6 +2,7 @@
 let loading_Display = document.getElementById('loading-Display');
 let loginDisplay = document.getElementById('login-section');
 let pagePrincipalDisplay = document.getElementById('principalPage');
+let principalPage = document.getElementById('principalPage');
 
 //Declarate Sub-views 
 let font_form_register = document.getElementById('font-form-register');
@@ -115,6 +116,35 @@ const changePage = () => {
     pagePrincipalDisplay.classList.add('displayFlex');
 };
 
+//Mostrar datos 
+
+const showData = () => {
+    if (principalPage.classList.contains('displayFlex')) {
+        
+        let usersContainer = document.getElementById('usersContainer');
+        let fragment = document.createDocumentFragment();
+        for (let elemento of USERS) {
+            let newDiv = document.createElement('div');
+            let newImg = document.createElement('img');
+            let newH4 = document.createElement('h4');
+            let newP = document.createElement('p');
+            newImg.setAttribute('src', '/img/img-3.jpeg');
+            newImg.setAttribute('alt', 'imgPerfil');
+            newH4.innerHTML = `${elemento.firstName}  ${elemento.lastName}`;
+            newP.innerHTML = `${elemento.nroDocumento}`;
+            newDiv.appendChild(newImg);
+            newDiv.appendChild(newH4);
+            newDiv.appendChild(newP);
+
+            fragment.appendChild(newDiv);
+        };
+    
+        usersContainer.appendChild(fragment);
+
+    };
+
+};
+
 //Login function 
 const loginFunction = ()=> {
     let ES = document.getElementById('input-email-login').value;
@@ -131,7 +161,8 @@ const loginFunction = ()=> {
                 loginDisplay.classList.remove('displayFlex');
             },4000);
             let showPagePrincipal = setTimeout(changePage, 8000);
-            localStorage.setItem('logueado', true);
+            let showDataDisplay = setTimeout(showData, 8100);
+            sessionStorage.setItem('logueado', true);
             break;
            
         }else if(ES.length == 0 || PS.length == 0) {
@@ -156,7 +187,7 @@ const loginFunction = ()=> {
 //verify of the user login 
 
 const verify = () => {
-    if (localStorage.getItem('logueado') == 'true') {
+    if (sessionStorage.getItem('logueado') == 'true') {
         loginDisplay.classList.remove('displayFlex');
         pagePrincipalDisplay.classList.add('displayFlex');
     };
@@ -165,22 +196,13 @@ const verify = () => {
 //Close sesion
 
 const closeSesion = () => {
-    localStorage.removeItem('logueado');
-}
-
-//Mostrar datos 
-
-const showData = () => {
-    let newDiv = document.createElement('div');
-    let newImg = document.createElement('img');
-    let newP = document.createElement('p')
-
-    
+    sessionStorage.removeItem('logueado');
 }
 
 //Call function 
 document.getElementById('btn-register').addEventListener('click', createUser);
 document.addEventListener('load', dataBase());
 document.addEventListener('load', verify());
+document.addEventListener('load', showData());
 document.getElementById('btn-login').addEventListener('click', loginFunction);
 document.getElementById('btn-close').addEventListener('click', closeSesion);

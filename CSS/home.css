@@ -115,12 +115,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 25px;
+    overflow-y: scroll;
 }
 
 .usersContainer > div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     padding: 5px;
     width: 100px;
     font-size: 12px;
@@ -132,8 +134,12 @@
     overflow: hidden;
 }
 
+.usersContainer div h4 {
+    font-size: 14px;
+}
+
 .usersContainer div p {
-    font-size: 12px;
+    font-size: 10px;
     color: #666;
 }
 
