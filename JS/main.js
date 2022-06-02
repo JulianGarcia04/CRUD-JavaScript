@@ -3,6 +3,7 @@ let loading_Display = document.getElementById('loading-Display');
 let loginDisplay = document.getElementById('login-section');
 let pagePrincipalDisplay = document.getElementById('principalPage');
 let principalPage = document.getElementById('principalPage');
+let userCard = document.getElementsByClassName('userCard');
 
 //Declarate Sub-views 
 let font_form_register = document.getElementById('font-form-register');
@@ -132,6 +133,7 @@ const showData = () => {
             newImg.setAttribute('alt', 'imgPerfil');
             newH4.innerHTML = `${elemento.firstName}  ${elemento.lastName}`;
             newP.innerHTML = `${elemento.nroDocumento}`;
+            newDiv.classList.add('userCard');
             newDiv.appendChild(newImg);
             newDiv.appendChild(newH4);
             newDiv.appendChild(newP);
@@ -199,6 +201,99 @@ const closeSesion = () => {
     sessionStorage.removeItem('logueado');
 }
 
+//Create User - Page Principal
+
+const createUserPG = () => {
+    (async() => {
+        const { value: formValues } = await Swal.fire({
+            title: 'Register User',
+            html:
+            '<div class="formregister-container align-items-center overflow-scroll">'+
+                '<form>'+
+                    '<div class="register-input-container form-floating">'+
+                        '<input type="number" placeholder="Document Number" id="swal-input1" class="form-control input-Login" required>'+
+                        '<label for="swal-input1">Document Number</label>'+
+                        '<span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-user"></i></span>'+
+                    '</div>'+
+                    '<div class="register-input-container form-floating">'+
+                        '<input type="text" placeholder="First Name" id="swal-input2" class="form-control input-Login" required>'+
+                        '<label for="swal-input2">First Name</label>'+
+                        '<span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-user"></i></span>'+
+                    '</div>'+
+                    '<div class="register-input-container form-floating">'+
+                        '<input type="text" placeholder="Last Name" id="swal-input3" class="form-control input-Login" required>'+
+                        '<label for="swal-input3">Last Name</label>'+
+                        '<span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-user"></i></span>'+
+                    '</div>'+
+                    '<div class="register-input-container form-floating">'+
+                        '<input type="email" placeholder="Email" id="swal-input4" class="form-control input-Login" required>'+
+                        '<label for="swal-input4">Email</label>'+
+                        '<span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-at"></i></span>'+
+                    '</div>'+
+                    '<div class="register-input-container form-floating">'+
+                        '<input type="password" placeholder="Password" id="swal-input5" class="form-control input-Login" required>'+
+                        '<label for="swal-input5">Password</label>'+
+                        '<span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>'+
+                    '</div>'+
+                    '<div class="register-input-container form-floating">'+
+                        '<input type="password" placeholder="Password" id="swal-input6" class="form-control input-Login" required>'+
+                        '<label for="swal-input6">Confirm Password</label>'+
+                        '<span class="input-group-text spanText" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>'+
+                    '</div>'+
+                '</form>'+
+            '</div>',
+              
+            focusConfirm: false,
+            preConfirm: () => {
+                let NDS = document.getElementById('swal-input1').value;
+                let FNS = document.getElementById('swal-input2').value;
+                let LNS = document.getElementById('swal-input3').value;
+                let ES = document.getElementById('swal-input4').value;
+                let PS = document.getElementById('swal-input5').value;
+                let CPS = document.getElementById('swal-input6').value;
+
+                //Validamos que todo esté correcto
+                for (let i = 0; i < USERS.length || USERS.length == 0; i++) {
+                    if (NDS.length == 0 || FNS.length == 0 || LNS.length == 0 || ES.length == 0 || PS.length == 0 || CPS.length == 0) {
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Register Error, You have empty fields'
+                        })
+                        break;  
+                    }else if(USERS.length == 0||(NDS != USERS[i].nroDocumento)) {
+                        if((i == USERS.length-1 || USERS.length == 0) && PS == CPS){
+                            let newUser = new users(NDS, FNS, LNS, ES, PS);
+                            USERS.push(newUser);
+                            Toast.fire({
+                                icon: 'success',
+                                title: 'Signed in successfully'
+                            })
+                            localStorage.setItem(USERS.length+1, JSON.stringify(newUser));
+                            document.location.reload();
+                            break;
+                        }else if( PS != CPS){
+                            Toast.fire({
+                                icon: 'error',
+                                title: 'Register Error, The passwords are not the same'
+                            })
+                            break;  
+                        }
+                    }else if((NDS == USERS[i].nroDocumento)){
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Register Error, The user is already registered'
+                        })
+                        break;  
+                    }; 
+                };
+            }
+        });
+    })();
+}
+
+//Show data details
+
+
 //Call function 
 document.getElementById('btn-register').addEventListener('click', createUser);
 document.addEventListener('load', dataBase());
@@ -206,3 +301,7 @@ document.addEventListener('load', verify());
 document.addEventListener('load', showData());
 document.getElementById('btn-login').addEventListener('click', loginFunction);
 document.getElementById('btn-close').addEventListener('click', closeSesion);
+document.getElementById('btnAdd').addEventListener('click', createUserPG);
+for (let elemento of userCard) {
+    elemento.addEventListener('click', showDataDetails);
+}
